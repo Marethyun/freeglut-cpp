@@ -2,6 +2,7 @@
 
 #include "../tools/CstCodErr.h"
 #include "../tools/tools.h"
+#include <cmath>
 
 using namespace std;
 using namespace nsUtil;
@@ -14,8 +15,10 @@ minGL &line::_Edit(minGL &Window) const throw (myexception)
     if (pMin.abs != pMax.abs)
     {
         pair <float, float> equaPminPmax = computeab(pMin, pMax);
-        for (unsigned x (pMin.abs); x <= pMax.abs; ++x)
-            Window.setPixel (pos (x, equaPminPmax.first * x + equaPminPmax.second), borderColor);
+        for (unsigned x (pMin.abs); x <= pMax.abs; ++x) {
+            //Window.setPixel (pos (x, equaPminPmax.first * x + equaPminPmax.second), borderColor);
+            Window.setPixel (pos (x, (unsigned) ceil(equaPminPmax.first * (float) x + equaPminPmax.second)), borderColor);
+        }
     }
     else
     {

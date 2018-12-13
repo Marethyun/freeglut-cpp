@@ -61,11 +61,13 @@ void minGL::clearScreen() throw (myexception)
                 setPixel(pos (i, j), bgColor);
 }
 
-void minGL::setPixel(const pos &pos_, const RGBcolor &col) throw (myexception)
+void minGL::setPixel(const pos &pos_, const RGBcolor &col) throw (PixelException)
 {
 
-    if (pos_.abs > windowWidth) throw myexception (kErrTooRight);
-    if (pos_.ord > windowHeight) throw myexception (kErrTooHight);
+    //if (pos_.abs > windowWidth) throw myexception (kErrTooRight);
+    //if (pos_.ord > windowHeight) throw myexception (kErrTooHight);
+    if (pos_.abs > windowWidth) throw PixelException (pos_, col, "Pixel too right");
+    if (pos_.ord > windowHeight) throw PixelException (pos_, col, "Pixel too high");
 
     screenBuffer[3*(pos_.ord*windowWidth+pos_.abs)+0] = col.Red;
     screenBuffer[3*(pos_.ord*windowWidth+pos_.abs)+1] = col.Green;

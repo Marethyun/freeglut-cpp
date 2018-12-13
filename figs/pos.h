@@ -31,6 +31,14 @@ struct pos
       return (p1 == min (p1, p2));
   }
 
+  unsigned & getAbs() {
+      return abs;
+  }
+
+  unsigned & getOrd() {
+      return ord;
+  }
+
 
 };
 

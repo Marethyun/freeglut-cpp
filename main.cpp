@@ -11,6 +11,9 @@
 
 #include "figs/figure.h"
 
+#include "tools/tools.h"
+#include <cmath>
+
 using namespace std;
 
 int main()
@@ -68,16 +71,26 @@ int main()
 //    Window.updateGraphic();
 //    Window.get_key();
 
-    figure PacMan;
-    PacMan.Add(circle (pos (50, 50), 50, KBlack, KYellow));
-    PacMan.Add(circle (pos (75, 75), 5, KBlack, KBlack));
-    PacMan.Add(triangle(pos (50, 50),
-                                        pos (100, 50),
-                                        pos (83, 15), KBlack, KBlack));
+    try {
+        figure PacMan;
+        PacMan.Add(circle (pos (50, 50), 50, KBlack, KYellow));
+        PacMan.Add(circle (pos (75, 75), 5, KBlack, KBlack));
+        PacMan.Add(triangle(pos (50, 50), pos (100, 50), pos (83, 15), KBlack, KBlack));
 
-    f.Add (PacMan);
-    Window << f;
-    Window.updateGraphic();
-    Window.get_key();
+        f.Add (PacMan);
+        Window << f;
+        Window.updateGraphic();
+        Window.get_key();
+    } catch (exception &e) {
+        cout << e.what() << endl;
+    }
+
+//    pair<float, float> coef = computeab(pos(83, 15), pos(50, 100));
+
+//    for (unsigned x(50); x <= 83; ++x) {
+//        cout << x << ";";
+//        cout << (unsigned) ceil(coef.first * (float) x + coef.second) << endl;
+//    }
+
     return 0;
 }

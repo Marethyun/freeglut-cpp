@@ -13,6 +13,9 @@
 
 #include "../tools/myexception.h"
 #include "../figs/pos.h"
+
+#include "../tools/pixelexception.h"
+
 /*!
  * \brief The minGL class
  *          sert de classe de base à tout le bordel
@@ -62,7 +65,7 @@ public:
     ~minGL();
     void updateGraphic ();
     void clearScreen() throw (myexception);
-    void setPixel(const pos & pos_, const RGBcolor & col) throw (myexception);
+    void setPixel(const pos & pos_, const RGBcolor & col) throw (PixelException);
     char get_key ();
 
 };

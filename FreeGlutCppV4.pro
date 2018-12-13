@@ -16,7 +16,8 @@ SOURCES += main.cpp \
     tools/myexception.cpp \
     tools/pixel.cpp \
     graph/iminglinjectable.cpp \
-    tools/tools.cpp
+    tools/tools.cpp \
+    tools/pixelexception.cpp
 
 QT += opengl core gui
 
@@ -48,4 +49,5 @@ HEADERS += \
     tools/myexception.h \
     tools/pixel.h \
     tools/tools.h \
-    graph/iminglinjectable.h
+    graph/iminglinjectable.h \
+    tools/pixelexception.h
