@@ -1,10 +1,5 @@
 #include "tools.h"
 
-unsigned uAbs (const unsigned & a, const unsigned & b)
-{
-    return std::max (a, b) - std::min (a, b);
-}
-
 // Renvoie le coefficient de la droite passant par pt1 et pt2, ET
 // pair<coef_directeur, decalage>
 std::pair <float, float> computeab (const pos & pt1, const pos & pt2)
