@@ -5,7 +5,7 @@
 using namespace std;
 using namespace nsUtil;
 
-//astuce pour faire passer les handlers en fonction static dans initGraphic ()
+//astuce pour faire passer les handlers en fonctions static dans initGraphic ()
 namespace {
 map<int, minGL *> anyWindow;
 
