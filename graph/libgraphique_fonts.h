@@ -1,13 +1,15 @@
 #ifndef _LIBGRAPHIQUE_FONTS_
 #define _LIBGRAPHIQUE_FONTS_
 
-
+/**
+ * @file libgraphique_fonts.h
+ * @brief Hideously define font faces
+ */
 
 struct font {
   int height;
   const GLubyte **faces;
 };
-
 
 // HELVETICA 10
 // Characters face
